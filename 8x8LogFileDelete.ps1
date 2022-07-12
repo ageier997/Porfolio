@@ -1,5 +1,5 @@
 #Create the Logfile
-New-item -Path c:\Users\administrator.napa\Desktop -Name 8x8errorlog -ItemType File
+New-item -Path c:\Users\administrator\Desktop -Name 8x8errorlog -ItemType File
 
 #set $users to the users in the root directory and filters out anything that is not a folder
 $users = Get-ChildItem c:\users | Where-Object { $_.PSIsContainer}
@@ -15,6 +15,6 @@ foreach ($user in $users){
     } 
 #note each of the errors recieved and write them to the logfile, -append does not overwrite    
     catch {
-        "$error" | Out-File c:\Users\administrator.napa\Desktop\8x8errorlog\errors.txt -append
+        "$error" | Out-File c:\Users\administrator\Desktop\8x8errorlog\errors.txt -append
     }
 }
